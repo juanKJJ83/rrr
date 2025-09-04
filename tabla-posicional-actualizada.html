@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Posicional Interactiva</title>
+    <link rel="stylesheet" href="tabla-posicional-actualizada.css">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Tabla Posicional">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <meta name="msapplication-TileImage" content="icon-192.svg">
+    <meta name="msapplication-TileColor" content="#667eea">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">🔢 Tabla Posicional Interactiva 🔢</h1>
+            <button id="creator-btn" class="creator-btn">
+                <span class="sparkle">✨</span>
+                App creada por @profealcuadrado
+                <span class="sparkle">✨</span>
+            </button>
+        </header>
+
+        <!-- Popup Modal -->
+        <div id="popup-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-popup">&times;</span>
+                <div class="message-content">
+                    <h2>¡Recuerda!</h2>
+                    <p>Haz el bien y no mires a quien</p>
+                    <div class="social-buttons">
+                        <a href="https://youtube.com/@profealcuadrado" target="_blank" class="social-btn youtube-btn">
+                            <span class="icon">📺</span>
+                            YouTube
+                        </a>
+                        <a href="https://tiktok.com/@profealcuadrado" target="_blank" class="social-btn tiktok-btn">
+                            <span class="icon">🎵</span>
+                            TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="app-content">
+            <div class="instruction">
+                <h2>Observa el siguiente ejemplo:</h2>
+            </div>
+
+            <!-- Botón educativo de TikTok -->
+            <div class="educational-section">
+                <a href="https://www.tiktok.com/@profealcuadrado/video/7066079185852255493?is_from_webapp=1&sender_device=pc" target="_blank" class="tiktok-educational-btn">
+                    <span class="tiktok-icon">🎵</span>
+                    <span class="btn-text">¿Cómo leer números grandes? ¡Aprende aquí!</span>
+                    <span class="tiktok-logo">TikTok</span>
+                </a>
+            </div>
+
+            <!-- Tabla Posicional -->
+            <div class="table-container">
+                <table class="positional-table">
+                    <thead>
+                        <tr>
+                            <th class="label-cell">NÚMERO</th>
+                            <th class="input-cell" colspan="15">
+                                <input type="text" id="number-input" placeholder="Ingresa un número aquí" maxlength="15">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Fila de categorías principales -->
+                        <tr class="category-row">
+                            <td class="label-cell">CATEGORÍAS</td>
+                            <td class="category-cell billions" colspan="3">BILLONES</td>
+                            <td class="category-cell thousands-millions" colspan="3">MILES DE MILLONES</td>
+                            <td class="category-cell millions" colspan="3">MILLONES</td>
+                            <td class="category-cell thousands" colspan="3">MILES</td>
+                            <td class="category-cell units" colspan="3">UNIDADES</td>
+                        </tr>
+                        <!-- Fila de descripciones de posición -->
+                        <tr class="description-row">
+                            <td class="label-cell">VALOR POSICIONAL</td>
+                            <td class="desc-cell billions">Centena de billón</td>
+                            <td class="desc-cell billions">Decena de billón</td>
+                            <td class="desc-cell billions">Unidad de billón</td>
+                            <td class="desc-cell thousands-millions">Centena de mil de millón</td>
+                            <td class="desc-cell thousands-millions">Decena de mil de millón</td>
+                            <td class="desc-cell thousands-millions">Unidad de mil de millón</td>
+                            <td class="desc-cell millions">Centena de millón</td>
+                            <td class="desc-cell millions">Decena de millón</td>
+                            <td class="desc-cell millions">Unidad de millón</td>
+                            <td class="desc-cell thousands">Centena de mil</td>
+                            <td class="desc-cell thousands">Decena de mil</td>
+                            <td class="desc-cell thousands">Unidad de mil</td>
+                            <td class="desc-cell units">Centenas</td>
+                            <td class="desc-cell units">Decenas</td>
+                            <td class="desc-cell units">Unidades</td>
+                        </tr>
+                        <!-- Fila de abreviaciones -->
+                        <tr class="abbreviation-row">
+                            <td class="label-cell">ABREVIATURA</td>
+                            <td class="abbr-cell billions">CBi</td>
+                            <td class="abbr-cell billions">DBi</td>
+                            <td class="abbr-cell billions">UBi</td>
+                            <td class="abbr-cell thousands-millions">CMM</td>
+                            <td class="abbr-cell thousands-millions">DMM</td>
+                            <td class="abbr-cell thousands-millions">UMMI</td>
+                            <td class="abbr-cell millions">CMi</td>
+                            <td class="abbr-cell millions">DMi</td>
+                            <td class="abbr-cell millions">UMi</td>
+                            <td class="abbr-cell thousands">CM</td>
+                            <td class="abbr-cell thousands">DM</td>
+                            <td class="abbr-cell thousands">UM</td>
+                            <td class="abbr-cell units">c</td>
+                            <td class="abbr-cell units">d</td>
+                            <td class="abbr-cell units">u</td>
+                        </tr>
+                        <tr class="value-row">
+                            <td class="label-cell">VALOR</td>
+                            <td class="value-cell billions" data-position="0"></td>
+                            <td class="value-cell billions" data-position="1"></td>
+                            <td class="value-cell billions" data-position="2"></td>
+                            <td class="value-cell thousands-millions" data-position="3"></td>
+                            <td class="value-cell thousands-millions" data-position="4"></td>
+                            <td class="value-cell thousands-millions" data-position="5"></td>
+                            <td class="value-cell millions" data-position="6"></td>
+                            <td class="value-cell millions" data-position="7"></td>
+                            <td class="value-cell millions" data-position="8"></td>
+                            <td class="value-cell thousands" data-position="9"></td>
+                            <td class="value-cell thousands" data-position="10"></td>
+                            <td class="value-cell thousands" data-position="11"></td>
+                            <td class="value-cell units" data-position="12"></td>
+                            <td class="value-cell units" data-position="13"></td>
+                            <td class="value-cell units" data-position="14"></td>
+                        </tr>
+                        <tr class="reading-row">
+                            <td class="label-cell">LECTURA</td>
+                            <td class="reading-cell" colspan="15">
+                                <div id="number-reading">Ingresa un número para ver su lectura</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="controls">
+                <button id="clear-btn" class="control-btn clear-btn">🗑️ Limpiar</button>
+                <button id="random-btn" class="control-btn random-btn">🎲 Número Aleatorio</button>
+                <button id="help-btn" class="control-btn help-btn">❓ Ayuda</button>
+            </div>
+
+            <!-- Sección de explicación visual -->
+            <div class="visual-explanation" id="visual-explanation">
+                <h3>📚 Explicación Visual del Número</h3>
+                <div class="number-display">
+                    <div class="number-parts" id="number-parts">
+                        <!-- Aquí se mostrará el número dividido por partes -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Panel de Ayuda -->
+            <div id="help-panel" class="help-panel">
+                <h3>¿Cómo usar la Tabla Posicional?</h3>
+                <ul>
+                    <li>🔢 Escribe cualquier número en el campo de entrada</li>
+                    <li>👀 Observa cómo se distribuye en las diferentes posiciones</li>
+                    <li>📖 Lee la interpretación en palabras del número</li>
+                    <li>🎲 Usa "Número Aleatorio" para practicar con diferentes números</li>
+                    <li>🗑️ Usa "Limpiar" para empezar de nuevo</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="tabla-posicional-actualizada.js"></script>
+    
+    <!-- PWA Installation Script -->
+    <script>
+        // Registrar Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registrado: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registro falló: ', registrationError);
+                    });
+            });
+        }
+        
+        // Manejar instalación de PWA
+        let deferredPrompt;
+        const installButton = document.createElement('button');
+        installButton.textContent = '📱 Instalar App';
+        installButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 184, 148, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+        `;
+        
+        installButton.addEventListener('mouseenter', () => {
+            installButton.style.transform = 'translateY(-3px)';
+            installButton.style.boxShadow = '0 8px 20px rgba(0, 184, 148, 0.4)';
+        });
+        
+        installButton.addEventListener('mouseleave', () => {
+            installButton.style.transform = 'translateY(0)';
+            installButton.style.boxShadow = '0 6px 15px rgba(0, 184, 148, 0.3)';
+        });
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installButton.style.display = 'block';
+            document.body.appendChild(installButton);
+        });
+        
+        installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response to the install prompt: ${outcome}`);
+                deferredPrompt = null;
+                installButton.style.display = 'none';
+            }
+        });
+        
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA fue instalada');
+            installButton.style.display = 'none';
+        });
+        
+        // Manejar parámetros URL para shortcuts
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+            
+            if (action === 'random') {
+                setTimeout(() => {
+                    const randomBtn = document.getElementById('random-btn');
+                    if (randomBtn) randomBtn.click();
+                }, 500);
+            } else if (action === 'help') {
+                setTimeout(() => {
+                    const helpBtn = document.getElementById('help-btn');
+                    if (helpBtn) helpBtn.click();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

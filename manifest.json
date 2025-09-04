@@ -1,0 +1,67 @@
+{
+  "name": "Tabla Posicional Interactiva",
+  "short_name": "TablaPosicional",
+  "description": "Aplicación educativa para aprender el valor posicional de los números",
+  "start_url": "./tabla-posicional-actualizada.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "es",
+  "categories": ["education", "utilities"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-narrow.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Número Aleatorio",
+      "short_name": "Aleatorio",
+      "description": "Generar un número aleatorio",
+      "url": "./tabla-posicional-actualizada.html?action=random",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Ayuda",
+      "short_name": "Ayuda",
+      "description": "Ver instrucciones de uso",
+      "url": "./tabla-posicional-actualizada.html?action=help",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
